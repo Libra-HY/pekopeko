@@ -28,5 +28,5 @@ jobs:
       run: |
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} # 登录docker，并使用Secret里配置的参数
         docker build -t pekopeko:latest . #执行构建
-        docker tag cuiziyang hub.docker.com/czy0612/pekopeko
+        docker tag pekopeko hub.docker.com/czy0612/pekopeko
         docker push czy0612/pekopeko:tagname # 推送
