@@ -24,11 +24,10 @@ jobs:
       run: |
         npm install
         npm run build:test --if-present
-    - name: Docker Login
+    - name: Docker Push
       uses: docker/build-push-action@v1
       with:
-        registry: pekopeko
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: czy0612/pekopeko
+        repository: https://hub.docker.com/r/czy0612/pekopeko
         tags: v1
